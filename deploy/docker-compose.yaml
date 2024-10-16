@@ -27,8 +27,6 @@ services:
       - "gonzalonazareno.org:172.100.0.1"
     networks:
       mail_network:
-        driver: default
         ipam:
-          driver: bridge
           config:
             - subnet: 172.100.0.0/16
