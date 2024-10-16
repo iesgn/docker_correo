@@ -25,3 +25,6 @@ services:
     restart: unless-stopped
     extra_hosts:
       - "gonzalonazareno.org:172.100.0.1"
+    networks:
+      my_custom_network:
+        external: true
