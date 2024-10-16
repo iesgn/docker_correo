@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  roundcubemail:
+    image: roundcube/roundcubemail
+    container_name: roundcube
+    environment:
+      - ROUNDCUBEMAIL_DEFAULT_HOST=localhost
+      - ROUNDCUBEMAIL_SMTP_SERVER=localhost
+      - ROUNDCUBEMAIL_DB_TYPE=sqlite
+    ports:
+      - "8005:80"
+    volumes:
+      - ./html:/var/www/html          # Directorio de instalación de Roundcube
+      - ./config:/var/roundcube/config # Archivos de configuración adicionales
+      - ./db:/var/roundcube/db         # Base de datos SQLite persistente
+      - ./temp:/tmp/roundcube-temp     # Directorio temporal de Roundcube
+    restart: unless-stopped
+
