@@ -9,11 +9,10 @@ services:
       - ROUNDCUBEMAIL_SMTP_SERVER=gonzalonazareno.org
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
       - ROUNDCUBEMAIL_SMTP_PORT=25
-      - ROUNDCUBEMAIL_SMTP_USER=  # Deja en blanco para no usar autenticación
-      - ROUNDCUBEMAIL_SMTP_PASS=  # Deja en blanco para no usar autenticación
-      - ROUNDCUBEMAIL_SMTP_AUTH_TYPE=  # D
-      - ROUNDCUBEMAIL_SMTP_TLS=false  # No utilizar TLS si el servidor no lo requiere en el puerto 25
-      - ROUNDCUBEMAIL_DB_TYPE=sqlite  # 
+      - ROUNDCUBEMAIL_SMTP_USER=
+      - ROUNDCUBEMAIL_SMTP_PASS=
+      - ROUNDCUBEMAIL_SMTP_AUTH_TYPE=
+      - ROUNDCUBEMAIL_SMTP_TLS=false
     ports:
       - "8005:80"
     volumes:
