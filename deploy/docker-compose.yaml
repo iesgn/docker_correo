@@ -5,8 +5,8 @@ services:
     image: roundcube/roundcubemail
     container_name: roundcube
     environment:
-      - ROUNDCUBEMAIL_DEFAULT_HOST=host.docker.internal
-      - ROUNDCUBEMAIL_SMTP_SERVER=host.docker.internal
+      - ROUNDCUBEMAIL_DEFAULT_HOST=172.18.0.1
+      - ROUNDCUBEMAIL_SMTP_SERVER=172.18.0.1
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
     ports:
       - "8005:80"
