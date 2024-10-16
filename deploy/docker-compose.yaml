@@ -25,9 +25,3 @@ services:
     restart: unless-stopped
     extra_hosts:
       - "gonzalonazareno.org:172.100.0.1"
-    networks:
-      mail_network:
-        driver: bridge
-        ipam:
-          config:
-            - subnet: 172.100.0.0/16
