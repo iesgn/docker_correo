@@ -9,9 +9,9 @@ services:
       - ROUNDCUBEMAIL_SMTP_SERVER=gonzalonazareno.org
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
       - ROUNDCUBEMAIL_SMTP_PORT=25
-      - ROUNDCUBEMAIL_SMTP_USER=
-      - ROUNDCUBEMAIL_SMTP_PASS=
-      - ROUNDCUBEMAIL_SMTP_AUTH_TYPE=
+      - ROUNDCUBEMAIL_SMTP_USER=''
+      - ROUNDCUBEMAIL_SMTP_PASS=''
+      - ROUNDCUBEMAIL_SMTP_AUTH_TYPE=''
       - ROUNDCUBEMAIL_SMTP_TLS=false
     ports:
       - "8005:80"
@@ -20,6 +20,15 @@ services:
       - ./config:/var/roundcube/config # Archivos de configuración adicionales
       - ./db:/var/roundcube/db         # Base de datos SQLite persistente
       - ./temp:/tmp/roundcube-temp     # Directorio temporal de Roundcube
+    networks:
+      - mail_network 
     restart: unless-stopped
     extra_hosts:
-      - "gonzalonazareno.org:172.18.0.1"
+      - "gonzalonazareno.org:172.100.0.1"
+    networks:
+      mail_network:
+        driver: bridge
+        ipam:
+          driver: default
+          config:
+            - subnet: 172.100.0.0/16
