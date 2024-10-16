@@ -8,6 +8,7 @@ services:
       - ROUNDCUBEMAIL_DEFAULT_HOST=gonzalonazareno.org
       - ROUNDCUBEMAIL_SMTP_SERVER=gonzalonazareno.org
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
+      - ROUNDCUBEMAIL_SMTP_PORT=25
     ports:
       - "8005:80"
     volumes:
