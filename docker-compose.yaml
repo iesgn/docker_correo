@@ -20,11 +20,6 @@ services:
       - ./config:/var/roundcube/config # Archivos de configuración adicionales
       - ./db:/var/roundcube/db         # Base de datos SQLite persistente
       - ./temp:/tmp/roundcube-temp     # Directorio temporal de Roundcube
-    networks:
-      - mail_network 
     restart: unless-stopped
     extra_hosts:
       - "gonzalonazareno.org:172.100.0.1"
-    networks:
-      my_custom_network:
-        external: true
