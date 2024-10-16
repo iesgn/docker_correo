@@ -8,8 +8,6 @@ services:
       - ROUNDCUBEMAIL_DEFAULT_HOST=127.0.0.1
       - ROUNDCUBEMAIL_SMTP_SERVER=127.0.0.1
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
-    ports:
-      - "8005:80"
     volumes:
       - ./html:/var/www/html          # Directorio de instalación de Roundcube
       - ./config:/var/roundcube/config # Archivos de configuración adicionales
