@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   roundcubemail:
@@ -29,6 +29,6 @@ services:
       mail_network:
         driver: default
         ipam:
-          driver: default
+          driver: bridge
           config:
             - subnet: 172.100.0.0/16
